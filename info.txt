@@ -1,0 +1,48 @@
+Autor: Dominik Tomkiewicz 
+Indeks: 140793
+Grupa: I4-2
+
+Alfabet: 
+Przyjetym alfabetem dla szyfru sa male i duze litery alfabetu lacinskiego [abcdefghijklmnopqrstuvwxyz],
+czesc znakow interpunkcyjnych [,.:?!()[]{}"].
+oraz spacje.
+
+Opis szyfru:
+Szyfr Bacona - jest to pieciobitowy szyfr binarny, podstawieniowy (w tym projekcie zostal wprowadzony
+szesciobitowy w celu rozszerzenia alfabetu). 
+Tlo tekstowe powinno miec dlugosc conajmniej 6 razy dluzsza od szyfrowanej wiadomosci + liczba 
+spacji szyfrowanej wiadomosci. 
+Tlo tekstowe jest dzielony na 6 znakowe bloki. Kazdy blok odpowiada jednej literze wiadomosci do 
+zaszyfrowania. 
+O wartosci bloku decyduje to, ktore litery z tla tekstowego sa duze, a ktore male. 
+Duze litery odpowiadaja wartosci 1 w systemie dwojkowym, a male wartosci 0. 
+Litera "a" jest pierwszym elementem alfabetu zatem w szyfrze ma wartosc "000000", litera "b" "000001",
+litera "c" ma wartosc "000010" itd. 
+Pierwszy znak bloku mowi czy litera jest duza czy mala np.: "A" ma wartosc "100000".
+
+Przyklad:
+Zalozmy ze chcemy zaszyfrowac slowo "Dom" dla tla "ala ma tam duzego kota".
+Aby to zrobic dzielimy tlo na piecioelementowe bloki (spacje pomijamy):
+blok 1: "alama", blok 2: "duzeg", blok 3: "okota". 
+Nastepnie szyfrujemy wiadomosc:
+Litera "d" ma w szyfrze wartosc "100011", zatem po zaszyfrowaniu blok pierwszy przyjmie wartosc:
+"alamAT". 
+Litera "o" ma wartosc "001110", więc po zaszyfrowaniu blok 2 przyjmie wartosc: 
+"amDUZe". 
+Ostatnia litera, "m", przyjmuje wartosc "001100", zatem po zaszyfrowaniu blok 3 bedzie mial wartosc:
+"goKOta".
+Wynikiem szyfrowania bedzie, wiec ciag:
+"alaMAdUZEgoKOta".
+
+Dzialanie programu:
+Wiadomosc do zaszyfrowania wprowadza sie w lewym polu ("Type Message here...").
+Tlo wprowadza sie w prawym polu ("Type Key here...").
+Przycisk Encrypt szyfruje wiadomosc za pomoca tla.
+Przycisk Decrypt deszyfruje wiadomosc wprowadzona w polu tla.
+Przycisk Set Message from File pozwala zaladowac wiadomosc z wybranego pliku.
+Przycisk Set Background Text from File pozwala zaladowac tlo z wybranego pliku.  
+Po wprowadzeniu wiadomosci do do lewego pola mozna wygenerowac losowe tlo po 
+nacisnieciu przycisku Generate random Background Text.
+Po wprowadzeniu wiadomosci i tla szyfruje sie wiadomosc za pomoca przycisku Encrypt.
+Po wprowadzeniu zaszyfrowanego tla deszyfruje sie je za pomoca klucza Decrypt.
+W razie odszyfrowania lub zaszyfrowania pojawia sie opcja zapisu wyniku do wybrabnego pliku.
